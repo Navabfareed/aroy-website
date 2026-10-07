@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AROY — The Story Never Ends</title>
+<meta name="description" content="AROY — a community-driven mythology-inspired meme coin on Robinhood Chain.">
+<style>
+:root{
+  --bg:#070706; --bg2:#10100d; --gold:#d9aa58; --gold2:#f4d58d;
+  --text:#f6f1e8; --muted:#aaa39a; --line:rgba(217,170,88,.22);
+  --card:rgba(20,18,14,.78);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text); background:
+  radial-gradient(circle at 50% -10%,rgba(217,170,88,.20),transparent 34%),
+  radial-gradient(circle at 10% 45%,rgba(122,84,31,.10),transparent 28%),
+  var(--bg);
+  line-height:1.6; overflow-x:hidden;
+}
+body:before{
+  content:""; position:fixed; inset:0; pointer-events:none; opacity:.20;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:42px 42px;
+  mask-image:linear-gradient(to bottom,#000,transparent 80%);
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,92%);margin:auto}
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:20;
+  background:rgba(7,7,6,.72);backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,.06)
+}
+.navin{height:72px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:3px}
+.mark{
+  width:38px;height:38px;border:1px solid var(--gold);border-radius:50%;
+  display:grid;place-items:center;color:var(--gold2);font-family:Georgia,serif;font-size:21px;
+  box-shadow:0 0 28px rgba(217,170,88,.18)
+}
+.navlinks{display:flex;gap:26px;color:#c9c2b8;font-size:14px}
+.navlinks a:hover{color:var(--gold2)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  border:1px solid var(--gold);border-radius:999px;padding:13px 20px;
+  font-weight:750;transition:.2s
+}
+.btn.primary{background:linear-gradient(135deg,#e0b661,#9d6c2c);color:#090806;border:0}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(217,170,88,.16)}
+.hero{min-height:850px;display:grid;place-items:center;padding:145px 0 80px;position:relative}
+.hero:after{
+  content:"";position:absolute;inset:80px 0 0;
+  background:radial-gradient(ellipse at center,rgba(217,170,88,.13),transparent 45%);
+  pointer-events:none
+}
+.hero-inner{text-align:center;position:relative;z-index:2}
+.eyebrow{color:var(--gold2);font-size:12px;letter-spacing:5px;text-transform:uppercase;margin-bottom:22px}
+.coin{
+  width:156px;height:156px;margin:0 auto 30px;border-radius:50%;
+  display:grid;place-items:center;position:relative;
+  border:1px solid rgba(244,213,141,.75);
+  background:radial-gradient(circle at 35% 25%,#3a2b17,#100e0b 62%,#050504);
+  box-shadow:0 0 70px rgba(217,170,88,.20),inset 0 0 35px rgba(217,170,88,.10)
+}
+.coin:before{content:"";position:absolute;inset:10px;border:1px solid rgba(217,170,88,.42);border-radius:50%}
+.coin span{font:700 68px Georgia,serif;color:var(--gold2);text-shadow:0 0 24px rgba(244,213,141,.35)}
+h1{
+  font:700 clamp(58px,11vw,126px)/.9 Georgia,serif;letter-spacing:12px;
+  background:linear-gradient(#fff5df,#d4a85b 65%,#8d5d26);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.tag{font:500 clamp(18px,3vw,27px)/1.4 Georgia,serif;color:#ddd0bb;margin:22px auto 14px}
+.sub{max-width:650px;margin:auto;color:var(--muted);font-size:16px}
+.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
+.socials{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:22px}
+.social{padding:9px 14px;border:1px solid rgba(255,255,255,.10);border-radius:999px;color:#c7c0b5;font-size:13px}
+.social:hover{border-color:var(--gold);color:var(--gold2)}
+section{padding:90px 0}
+.section-title{font:600 clamp(34px,5vw,54px)/1.1 Georgia,serif;margin-bottom:12px}
+.section-lead{color:var(--muted);max-width:680px;margin-bottom:35px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{
+  padding:27px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(27,23,17,.86),var(--card));
+  border-radius:20px;box-shadow:inset 0 1px rgba(255,255,255,.035)
+}
+.card h3{font-size:17px;margin-bottom:8px;color:var(--gold2)}
+.card p{color:var(--muted);font-size:14px}
+.stat{font:600 30px Georgia,serif;margin:5px 0 2px}
+.label{color:#817a70;font-size:12px;text-transform:uppercase;letter-spacing:2px}
+.story{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.storybox{padding:36px;border-radius:26px;border:1px solid var(--line);background:radial-gradient(circle at 80% 20%,rgba(217,170,88,.13),transparent 35%),#0d0c09}
+.quote{font:500 clamp(25px,4vw,43px)/1.2 Georgia,serif;color:#eee3d1}
+.quote em{color:var(--gold2)}
+.road{position:relative;display:grid;gap:14px}
+.phase{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:20px;border-left:1px solid var(--line)}
+.phase b{color:var(--gold2);letter-spacing:2px}
+.phase span{color:var(--muted);font-size:14px}
+.token-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.token{display:flex;justify-content:space-between;padding:17px 0;border-bottom:1px solid rgba(255,255,255,.08);gap:20px}
+.token span:first-child{color:var(--muted)}
+.token span:last-child{font-weight:700}
+.contract{
+  margin-top:22px;padding:18px;border:1px dashed rgba(217,170,88,.35);
+  border-radius:14px;color:#d9d1c4;word-break:break-all;background:#0a0907
+}
+.notice{font-size:12px;color:#8e877e;margin-top:16px}
+footer{border-top:1px solid rgba(255,255,255,.07);padding:38px 0;color:#817a70;font-size:12px}
+.footerin{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:760px){
+  .navlinks{display:none}.hero{min-height:760px;padding-top:120px}
+  .grid,.story,.token-grid{grid-template-columns:1fr}
+  .phase{grid-template-columns:90px 1fr}
+  h1{letter-spacing:7px}
+  section{padding:70px 0}
+}
+
+.wallet-btn{cursor:pointer;background:rgba(217,170,88,.10);color:var(--gold2)}
+.wallet-btn.connected{border-color:#6fd08a;color:#a9efbb}
+.wallet-modal{display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.72);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:20px}
+.wallet-modal.show{display:flex}.wallet-box{width:min(430px,100%);background:#11100d;border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:0 25px 80px rgba(0,0,0,.5)}
+.wallet-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.wallet-head h3{font:600 27px Georgia,serif}.close{border:0;background:none;color:#aaa;font-size:26px;cursor:pointer}
+.wallet-option{width:100%;display:flex;align-items:center;gap:13px;padding:15px;margin:9px 0;border:1px solid rgba(255,255,255,.10);border-radius:14px;background:#181611;color:#eee;cursor:pointer;text-align:left}
+.wallet-option:hover{border-color:var(--gold)}.wallet-icon{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:#29241b;font-weight:800;color:var(--gold2)}
+.wallet-note{font-size:12px;color:#8f887e;margin-top:15px}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container navin">
+    <a class="brand" href="#top"><span class="mark">A</span> AROY</a>
+    <div class="navlinks">
+      <a href="#story">Story</a><a href="#tokenomics">Tokenomics</a><a href="#roadmap">Roadmap</a><a href="#community">Community</a>
+    </div>
+    <button class="btn wallet-btn" id="connectBtn" type="button">Connect Wallet</button>
+  </div>
+</nav>
+
+<main id="top">
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="eyebrow">A forgotten legend • awakened onchain</div>
+    <div class="coin"><span>A</span></div>
+    <h1>AROY</h1>
+    <div class="tag">The story never ends.</div>
+    <p class="sub">A mythology-inspired community meme coin built for people who believe every legend deserves another chapter.</p>
+    <div class="actions">
+      <button class="btn primary" id="heroConnect" type="button">Connect Wallet</button>
+      <a class="btn primary" href="#tokenomics">Explore AROY</a>
+      <a class="btn" href="https://x.com/AROY_Mythology" target="_blank" rel="noopener">𝕏 Join the community</a>
+    </div>
+    <div class="socials">
+      <a class="social" href="https://x.com/AROY_Mythology" target="_blank" rel="noopener">𝕏 X / @AROY_Mythology</a>
+      <span class="social">Telegram — Coming soon</span>
+      <span class="social">Discord — Coming soon</span>
+    </div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="container story">
+    <div>
+      <div class="eyebrow">THE LEGEND</div>
+      <h2 class="section-title">A forgotten name.<br> A new chapter.</h2>
+      <p class="section-lead">AROY takes inspiration from ancient mystery, symbols and the idea that stories can return in unexpected forms. This is a community project, built one chapter at a time.</p>
+      <a class="btn" href="https://x.com/AROY_Mythology" target="_blank" rel="noopener">Enter the story ↗</a>
+    </div>
+    <div class="storybox">
+      <div class="quote">“The old world left a <em>legend.</em><br>The new world gives it a <em>voice.</em>”</div>
+      <p class="notice">AROY is a meme/community project. Nothing on this site is a promise of profit or investment performance.</p>
+    </div>
+  </div>
+</section>
+
+<section id="tokenomics">
+  <div class="container">
+    <div class="eyebrow">ONCHAIN IDENTITY</div>
+    <h2 class="section-title">Tokenomics</h2>
+    <p class="section-lead">Demo values are intentionally marked as placeholders until the actual AROY contract and launch parameters are confirmed.</p>
+    <div class="grid">
+      <div class="card"><div class="label">Network</div><div class="stat">Robinhood Chain</div><p>Ethereum-compatible Layer 2.</p></div>
+      <div class="card"><div class="label">Ticker</div><div class="stat">$AROY</div><p>The official AROY symbol.</p></div>
+      <div class="card"><div class="label">Contract</div><div class="stat">TBA</div><p>Published only after deployment.</p></div>
+    </div>
+    <div class="token-grid" style="margin-top:18px">
+      <div class="card">
+        <div class="token"><span>Total Supply</span><span>TBA</span></div>
+        <div class="token"><span>Liquidity</span><span>TBA</span></div>
+        <div class="token"><span>Buy/Sell Tax</span><span>TBA</span></div>
+      </div>
+      <div class="card">
+        <div class="token"><span>Chain ID</span><span>4663</span></div>
+        <div class="token"><span>Gas Token</span><span>ETH</span></div>
+        <div class="token"><span>Explorer</span><a href="https://robinhoodchain.blockscout.com" target="_blank" rel="noopener" style="color:var(--gold2)">Blockscout ↗</a></div>
+      </div>
+    </div>
+    <div class="contract">Contract Address: <strong>COMING AFTER DEPLOYMENT</strong></div>
+  </div>
+</section>
+
+<section id="roadmap">
+  <div class="container">
+    <div class="eyebrow">THE NEXT CHAPTERS</div>
+    <h2 class="section-title">Roadmap</h2>
+    <div class="road">
+      <div class="phase"><b>01<br>AWAKEN</b><span>Launch the AROY identity, publish official links, deploy the token and make the contract address publicly verifiable.</span></div>
+      <div class="phase"><b>02<br>GATHER</b><span>Build the community across X, Telegram and other official channels. Memes, art and community events begin.</span></div>
+      <div class="phase"><b>03<br>EXPAND</b><span>Improve discoverability, analytics, liquidity and ecosystem integrations as the community grows.</span></div>
+      <div class="phase"><b>04<br>LEGACY</b><span>Turn the mythology into a lasting community brand with new chapters shaped by holders and creators.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="community">
+  <div class="container">
+    <div class="eyebrow">OFFICIAL COMMUNITY</div>
+    <h2 class="section-title">Find AROY</h2>
+    <p class="section-lead">Use only the links published on this official website. New channels will be added here when they are ready.</p>
+    <div class="grid">
+      <a class="card" href="https://x.com/AROY_Mythology" target="_blank" rel="noopener"><h3>𝕏 X / Twitter</h3><p>@AROY_Mythology — Official social channel ↗</p></a>
+      <div class="card"><h3>Telegram</h3><p>Coming soon — official link will be published here.</p></div>
+      <div class="card"><h3>Discord</h3><p>Coming soon — official link will be published here.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="card">
+      <div class="eyebrow">TRANSPARENCY</div>
+      <h2 class="section-title">Built in the open.</h2>
+      <p class="section-lead" style="margin-bottom:0">AROY is an independent community project and is not affiliated with, endorsed by, sponsored by, or officially connected with Robinhood Markets, Inc. Robinhood Chain is the network on which this project is intended to operate. Always verify the contract address and official links before interacting with any token.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="wallet-modal" id="walletModal" aria-hidden="true">
+  <div class="wallet-box">
+    <div class="wallet-head"><h3>Connect wallet</h3><button class="close" id="closeWallet" type="button">×</button></div>
+    <p class="sub" style="font-size:14px;margin-bottom:16px">Choose a wallet. AROY is planned for Robinhood Chain (EVM).</p>
+    <button class="wallet-option" data-wallet="phantom-evm"><span class="wallet-icon">👻</span><span><b>Phantom</b><br><small>EVM / Robinhood Chain</small></span></button>
+    <button class="wallet-option" data-wallet="metamask"><span class="wallet-icon">🦊</span><span><b>MetaMask</b><br><small>EVM / Robinhood Chain</small></span></button>
+    <button class="wallet-option" data-wallet="coinbase"><span class="wallet-icon">C</span><span><b>Coinbase Wallet</b><br><small>EVM / Robinhood Chain</small></span></button>
+    <button class="wallet-option" data-wallet="phantom-sol"><span class="wallet-icon">◎</span><span><b>Phantom Solana</b><br><small>Solana connection only</small></span></button>
+    <p class="wallet-note">Never enter your seed phrase or private key on this website. Wallet approval happens in your wallet app.</p>
+  </div>
+</div>
+<script>
+const modal=document.getElementById('walletModal'), close=document.getElementById('closeWallet');
+const buttons=[document.getElementById('connectBtn'),document.getElementById('heroConnect')];
+function openWallet(){modal.classList.add('show');modal.setAttribute('aria-hidden','false')}
+function closeWallet(){modal.classList.remove('show');modal.setAttribute('aria-hidden','true')}
+buttons.forEach(b=>b&&b.addEventListener('click',openWallet)); close.addEventListener('click',closeWallet); modal.addEventListener('click',e=>{if(e.target===modal)closeWallet()});
+function short(a){return a.slice(0,6)+'…'+a.slice(-4)}
+async function evmConnect(kind){
+  let provider=null;
+  const eth=window.ethereum;
+  if(kind==='phantom-evm' && window.phantom?.ethereum) provider=window.phantom.ethereum;
+  else if(eth?.providers){provider=eth.providers.find(p=>p.isPhantom && kind==='phantom-evm')||eth.providers.find(p=>p.isMetaMask && kind==='metamask')||eth.providers[0]}
+  else provider=eth;
+  if(!provider){alert('Wallet app/extension not found. Please install the selected wallet first.');return}
+  try{const accounts=await provider.request({method:'eth_requestAccounts'}); if(accounts?.[0]){buttons.forEach(b=>{if(b){b.textContent='✓ '+short(accounts[0]);b.classList.add('connected')}});closeWallet();}}
+  catch(e){alert('Wallet connection was cancelled or failed. Please try again.');}
+}
+async function solConnect(){
+  const sol=window.phantom?.solana;
+  if(!sol){alert('Phantom Solana wallet was not detected. Open this site in Phantom or install Phantom.');return}
+  try{const r=await sol.connect(); alert('Solana wallet connected: '+short(r.publicKey.toString()));closeWallet()}catch(e){alert('Solana wallet connection was cancelled.')}
+}
+document.querySelectorAll('.wallet-option').forEach(o=>o.addEventListener('click',()=>{const k=o.dataset.wallet;k==='phantom-sol'?solConnect():evmConnect(k)}));
+</script>
+
+<footer>
+  <div class="container footerin">
+    <span>© 2026 AROY. The story never ends.</span>
+    <span>Community project • Not financial advice</span>
+  </div>
+</footer>
+</body>
+</html>
